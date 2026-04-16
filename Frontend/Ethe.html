@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ethereum Price Prediction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1e2f, #2b2b45);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #111827;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #9ca3af;
+            margin-bottom: 30px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #d1d5db;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .btn {
+            margin-top: 30px;
+            width: 100%;
+            padding: 15px;
+            background: #3b82f6;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+        }
+
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: bold;
+            display: none;
+        }
+
+        .up {
+            background: #065f46;
+            color: #d1fae5;
+        }
+
+        .down {
+            background: #7f1d1d;
+            color: #fee2e2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        @media(max-width: 700px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ethereum Price Prediction</h1>
+    <p class="subtitle">Machine Learning Based Next-Day Price Direction Prediction</p>
+
+    <div class="grid">
+        <div>
+            <label>Open Price</label>
+            <input type="number" placeholder="e.g. 3500">
+        </div>
+        <div>
+            <label>High Price</label>
+            <input type="number" placeholder="e.g. 3600">
+        </div>
+        <div>
+            <label>Low Price</label>
+            <input type="number" placeholder="e.g. 3450">
+        </div>
+        <div>
+            <label>Volume</label>
+            <input type="number" placeholder="e.g. 1200000">
+        </div>
+        <div>
+            <label>RSI</label>
+            <input type="number" placeholder="e.g. 60">
+        </div>
+        <div>
+            <label>Volatility</label>
+            <input type="number" placeholder="e.g. 25">
+        </div>
+        <div>
+            <label>MACD</label>
+            <input type="number" placeholder="e.g. 15">
+        </div>
+        <div>
+            <label>EMA (10)</label>
+            <input type="number" placeholder="e.g. 3505">
+        </div>
+    </div>
+
+    <button class="btn" onclick="showPrediction()">Predict Price Direction</button>
+
+    <div id="result" class="result"></div>
+</div>
+
+<footer>
+    © 2026 Ethereum Price Prediction | ML Project
+</footer>
+
+<script>
+    function showPrediction() {
+        // TEMPORARY frontend-only logic (demo)
+        // Later we will replace this with backend API call
+
+        const resultDiv = document.getElementById("result");
+
+        // Random prediction for UI demo
+        const prediction = Math.random() > 0.5 ? "UP" : "DOWN";
+
+        resultDiv.style.display = "block";
+
+        if (prediction === "UP") {
+            resultDiv.className = "result up";
+            resultDiv.innerText = "Predicted Direction: UP 📈";
+        } else {
+            resultDiv.className = "result down";
+            resultDiv.innerText = "Predicted Direction: DOWN 📉";
+        }
+    }
+</script>
+
+</body>
+</html>
